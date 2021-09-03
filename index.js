@@ -1,6 +1,6 @@
 const React = require('react');
-const { Component } = React;
-const { ViewPropTypes } = ReactNative = require('react-native');
+const { Component, } = React;
+const { ViewPropTypes, } = ReactNative = require('react-native');
 const createReactClass = require('create-react-class');
 const PropTypes = require('prop-types');
 const {
@@ -138,7 +138,7 @@ const ScrollableTabView = createReactClass({
     if (Platform.OS === 'ios') {
       const offset = pageNumber * this.state.containerWidth;
       if (this.scrollView) {
-        this.scrollView.scrollTo({x: offset, y: 0, animated: !this.props.scrollWithoutAnimation, });
+        this.scrollView.getNode().scrollTo({x: offset, y: 0, animated: !this.props.scrollWithoutAnimation, });
       }
     } else {
       if (this.scrollView) {
@@ -248,7 +248,7 @@ const ScrollableTabView = createReactClass({
         keyboardDismissMode="on-drag"
         {...this.props.contentProps}
       >
-          {scenes}
+        {scenes}
       </Animated.ScrollView>;
     } else {
       const scenes = this._composeScenes();
@@ -342,7 +342,7 @@ const ScrollableTabView = createReactClass({
     if (!width || width <= 0 || Math.round(width) === Math.round(this.state.containerWidth)) {
       return;
     }
-    
+
     if (Platform.OS === 'ios') {
       const containerWidthAnimatedValue = new Animated.Value(width);
       // Need to call __makeNative manually to avoid a native animated bug. See
