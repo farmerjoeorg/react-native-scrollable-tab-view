@@ -1,39 +1,40 @@
-const React = require('react');
-const { ViewPropTypes, } = ReactNative = require('react-native');
-const PropTypes = require('prop-types');
-const createReactClass = require('create-react-class');
-const {
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
   StyleSheet,
   Text,
   View,
-  Animated,
-} = ReactNative;
-const Button = require('./Button');
+  Animated
+} from 'react-native'
+import Button from './Button';
 
-const DefaultTabBar = createReactClass({
-  propTypes: {
-    goToPage: PropTypes.func,
-    activeTab: PropTypes.number,
-    tabs: PropTypes.array,
-    backgroundColor: PropTypes.string,
-    activeTextColor: PropTypes.string,
-    inactiveTextColor: PropTypes.string,
-    textStyle: Text.propTypes.style,
-    tabStyle: ViewPropTypes.style,
-    renderTab: PropTypes.func,
-    underlineStyle: ViewPropTypes.style,
-  },
 
-  getDefaultProps() {
-    return {
-      activeTextColor: 'navy',
-      inactiveTextColor: 'black',
-      backgroundColor: null,
-    };
+const styles = StyleSheet.create({
+  tab: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingBottom: 10,
   },
+  tabs: {
+    height: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderWidth: 1,
+    borderTopWidth: 0,
+    borderLeftWidth: 0,
+    borderRightWidth: 0,
+    borderColor: '#ccc',
+  },
+});
 
-  renderTabOption(name, page) {
-  },
+class DefaultTabBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.renderTab = this.renderTab.bind(this)
+  }
+
+  renderTabOption(name, page) {}
 
   renderTab(name, page, isTabActive, onPressHandler) {
     const { activeTextColor, inactiveTextColor, textStyle, } = this.props;
@@ -54,7 +55,7 @@ const DefaultTabBar = createReactClass({
         </Text>
       </View>
     </Button>;
-  },
+  }
 
   render() {
     const containerWidth = this.props.containerWidth;
@@ -91,26 +92,26 @@ const DefaultTabBar = createReactClass({
         />
       </View>
     );
-  },
-});
+  }
+}
 
-const styles = StyleSheet.create({
-  tab: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 10,
-  },
-  tabs: {
-    height: 50,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    borderWidth: 1,
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderRightWidth: 0,
-    borderColor: '#ccc',
-  },
-});
+DefaultTabBar.propTypes = {
+  goToPage: PropTypes.func,
+  activeTab: PropTypes.number,
+  tabs: PropTypes.array,
+  backgroundColor: PropTypes.string,
+  activeTextColor: PropTypes.string,
+  inactiveTextColor: PropTypes.string,
+  textStyle: Text.propTypes.style,
+  tabStyle: PropTypes.object,
+  renderTab: PropTypes.func,
+  underlineStyle: PropTypes.object,
+}
+
+DefaultTabBar.defaultProps = {
+  activeTextColor: 'navy',
+  inactiveTextColor: 'black',
+  backgroundColor: null,
+}
 
 module.exports = DefaultTabBar;
