@@ -7,8 +7,8 @@ import {
   Animated,
   ScrollView,
   Platform,
-  Dimensions
-} from 'react-native'
+  Dimensions,
+} from 'react-native';
 import Button from './Button';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
@@ -37,18 +37,18 @@ const styles = StyleSheet.create({
 
 class ScrollableTabBar extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.getInitialState = this.getInitialState.bind(this);
     this.state = this.getInitialState();
 
-    this.updateView = this.updateView.bind(this)
-    this.necessarilyMeasurementsCompleted = this.necessarilyMeasurementsCompleted.bind(this)
-    this.updateTabPanel = this.updateTabPanel.bind(this)
-    this.updateTabUnderline = this.updateTabUnderline.bind(this)
-    this.renderTab = this.renderTab.bind(this)
-    this.measureTab = this.measureTab.bind(this)
-    this.onTabContainerLayout = this.onTabContainerLayout.bind(this)
-    this.onContainerLayout = this.onContainerLayout.bind(this)
+    this.updateView = this.updateView.bind(this);
+    this.necessarilyMeasurementsCompleted = this.necessarilyMeasurementsCompleted.bind(this);
+    this.updateTabPanel = this.updateTabPanel.bind(this);
+    this.updateTabUnderline = this.updateTabUnderline.bind(this);
+    this.renderTab = this.renderTab.bind(this);
+    this.measureTab = this.measureTab.bind(this);
+    this.onTabContainerLayout = this.onTabContainerLayout.bind(this);
+    this.onContainerLayout = this.onContainerLayout.bind(this);
   }
 
   componentDidMount() {
@@ -241,7 +241,7 @@ ScrollableTabBar.propTypes = {
   renderTab: PropTypes.func,
   underlineStyle: PropTypes.object,
   onScroll: PropTypes.func,
-}
+};
 
 ScrollableTabBar.defaultProps = {
   scrollOffset: 52,
@@ -252,6 +252,6 @@ ScrollableTabBar.defaultProps = {
   tabStyle: {},
   tabsContainerStyle: {},
   underlineStyle: {},
-}
+};
 
 module.exports = ScrollableTabBar;

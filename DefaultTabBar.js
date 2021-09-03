@@ -4,8 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Animated
-} from 'react-native'
+  Animated,
+} from 'react-native';
 import Button from './Button';
 
 
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 class DefaultTabBar extends React.Component {
   constructor(props) {
     super(props);
-    this.renderTab = this.renderTab.bind(this)
+    this.renderTab = this.renderTab.bind(this);
   }
 
   renderTabOption(name, page) {}
@@ -106,12 +106,12 @@ DefaultTabBar.propTypes = {
   tabStyle: PropTypes.object,
   renderTab: PropTypes.func,
   underlineStyle: PropTypes.object,
-}
+};
 
 DefaultTabBar.defaultProps = {
   activeTextColor: 'navy',
   inactiveTextColor: 'black',
   backgroundColor: null,
-}
+};
 
 module.exports = DefaultTabBar;

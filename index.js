@@ -28,28 +28,28 @@ const AnimatedViewPagerAndroid = Platform.OS === 'android' ?
 
 class ScrollableTabView extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.scrollOnMountCalled = false
-    this.tabWillChangeWithoutGesture = false
+    this.scrollOnMountCalled = false;
+    this.tabWillChangeWithoutGesture = false;
 
-    this.getInitialState =  this.getInitialState.bind(this)
-    this.state = this.getInitialState()
+    this.getInitialState =  this.getInitialState.bind(this);
+    this.state = this.getInitialState();
 
-    this.goToPage = this.goToPage.bind(this)
-    this.renderTabBar = this.renderTabBar.bind(this)
-    this.updateSceneKeys = this.updateSceneKeys.bind(this)
-    this.newSceneKeys = this.newSceneKeys.bind(this)
-    this._polyfillAnimatedValue = this._polyfillAnimatedValue.bind(this)
-    this._shouldRenderSceneKey = this._shouldRenderSceneKey.bind(this)
-    this.renderScrollableContent = this.renderScrollableContent.bind(this)
-    this._composeScenes = this._composeScenes.bind(this)
-    this._onMomentumScrollBeginAndEnd = this._onMomentumScrollBeginAndEnd.bind(this)
-    this._updateSelectedPage = this._updateSelectedPage.bind(this)
-    this._onChangeTab = this._onChangeTab.bind(this)
-    this._onScroll = this._onScroll.bind(this)
-    this._handleLayout = this._handleLayout.bind(this)
-    this._children = this._children.bind(this)
+    this.goToPage = this.goToPage.bind(this);
+    this.renderTabBar = this.renderTabBar.bind(this);
+    this.updateSceneKeys = this.updateSceneKeys.bind(this);
+    this.newSceneKeys = this.newSceneKeys.bind(this);
+    this._polyfillAnimatedValue = this._polyfillAnimatedValue.bind(this);
+    this._shouldRenderSceneKey = this._shouldRenderSceneKey.bind(this);
+    this.renderScrollableContent = this.renderScrollableContent.bind(this);
+    this._composeScenes = this._composeScenes.bind(this);
+    this._onMomentumScrollBeginAndEnd = this._onMomentumScrollBeginAndEnd.bind(this);
+    this._updateSelectedPage = this._updateSelectedPage.bind(this);
+    this._onChangeTab = this._onChangeTab.bind(this);
+    this._onScroll = this._onScroll.bind(this);
+    this._handleLayout = this._handleLayout.bind(this);
+    this._children = this._children.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -407,7 +407,7 @@ ScrollableTabView.propTypes = {
   scrollWithoutAnimation: PropTypes.bool,
   locked: PropTypes.bool,
   prerenderingSiblingsNumber: PropTypes.number,
-}
+};
 
 ScrollableTabView.defaultProps = {
   tabBarPosition: 'top',
@@ -418,8 +418,8 @@ ScrollableTabView.defaultProps = {
   contentProps: {},
   scrollWithoutAnimation: false,
   locked: false,
-  prerenderingSiblingsNumber: 0
-}
+  prerenderingSiblingsNumber: 0,
+};
 
 ScrollableTabView.DefaultTabBar = DefaultTabBar;
 ScrollableTabView.ScrollableTabBar = ScrollableTabBar;
