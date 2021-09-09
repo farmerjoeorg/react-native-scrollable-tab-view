@@ -130,9 +130,9 @@ class ScrollableTabView extends React.Component {
       if (this.scrollView) {
         this.tabWillChangeWithoutGesture = true;
         if (this.props.scrollWithoutAnimation) {
-          this.scrollView.setPageWithoutAnimation(pageNumber);
+          this.scrollView.getNode().setPageWithoutAnimation(pageNumber);
         } else {
-          this.scrollView.setPage(pageNumber);
+          this.scrollView.getNode().setPage(pageNumber);
         }
       }
     }
